@@ -1,12 +1,11 @@
 import type { NextPage } from "next";
 import { useState } from "react";
-import Footer from "../components/footer/Footer";
-import Modal from "../components/modal/Modal";
-import Navbar from "../components/navbar/Navbar";
-import Sidebar from "../components/sidebar/Sidebar";
+import { MoneyInfo } from "../components/atoms";
+import { Footer, Navbar, Sidebar, Modal } from "../components/moleculs";
 
 const Home: NextPage = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const price = ["124.245", "353.235", "300.993"];
     return (
         <>
             <Sidebar pageTitle="overview" />
@@ -19,7 +18,8 @@ const Home: NextPage = () => {
                     <div className="content__container row w-100">
                         <div className="col-lg-7 mb-4 p-0">
                             {/* <!--========== Money Information ==========--> */}
-                            <div className="moneyinfo__container">
+                            <MoneyInfo category="overview" price={price} />
+                            {/* <div className="moneyinfo__container">
                                 <div className="moneyinfo__title-wrapper">
                                     <h3 className="title">
                                         Bulan,{" "}
@@ -62,7 +62,7 @@ const Home: NextPage = () => {
                                         </span>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
 
                             {/* <!--========== Transaction Information ==========--> */}
                             <div className="transaction__container">
@@ -390,7 +390,7 @@ const Home: NextPage = () => {
                                 className="btn btn-alt-blue list__close me-2 mb-2"
                                 onClick={() => setIsOpen(false)}
                             >
-                                Keluar
+                                Sipp
                             </div>
                             <div className="btn btn-blue mb-2">Selesaikan</div>
                         </div>

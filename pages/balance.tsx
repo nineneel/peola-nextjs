@@ -1,9 +1,8 @@
 import React from "react";
 import { useState } from "react";
+import { MoneyInfo } from "../components/atoms";
 
-import Footer from "../components/footer/Footer";
-import Navbar from "../components/navbar/Navbar";
-import Sidebar from "../components/sidebar/Sidebar";
+import { Footer, Navbar, Sidebar } from "../components/moleculs";
 
 export default function Balance() {
     return (
@@ -18,28 +17,11 @@ export default function Balance() {
                     <div className="content__container row w-100">
                         <div className="col-lg-8 mb-4 p-0">
                             {/*<!--========== Money Information ==========-->*/}
-                            <div className="moneyinfo__container col-lg-6">
-                                <div className="moneyinfo__title-wrapper">
-                                    <h3 className="title">
-                                        Saldo,{" "}
-                                        <span className="bold__title">
-                                            Saat ini
-                                        </span>
-                                    </h3>
-                                </div>
-
-                                <div className="moneyinfo__wrapper-alone">
-                                    <div className="moneyinfo__item">
-                                        <i className="uil uil-money-stack moneyinfo__icon icon__blue"></i>
-                                        <h3 className="moneyinfo__total price font__blue">
-                                            Rp. 900.000
-                                        </h3>
-                                        <span className="moneyinfo__desc">
-                                            Total Saldo
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
+                            <MoneyInfo
+                                isAlone
+                                category="balance"
+                                price={"800.000"}
+                            />
 
                             {/*<!--========== Saldo ==========-->*/}
                             <div className="balance__container">
