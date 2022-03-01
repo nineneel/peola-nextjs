@@ -1,7 +1,10 @@
 import type { NextPage } from "next";
 import { useState } from "react";
 import { MoneyInfo } from "../components/atoms";
+import TransactionItem from "../components/atoms/transactionItem/TransactionItem";
+import TransactionPerDay from "../components/atoms/transactionPerDay/TransactionPerDay";
 import { Footer, Navbar, Sidebar, Modal } from "../components/moleculs";
+import Transaction from "../components/moleculs/transaction/Transaction";
 
 const Home: NextPage = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -19,184 +22,45 @@ const Home: NextPage = () => {
                         <div className="col-lg-7 mb-4 p-0">
                             {/* <!--========== Money Information ==========--> */}
                             <MoneyInfo category="overview" price={price} />
-                            {/* <div className="moneyinfo__container">
-                                <div className="moneyinfo__title-wrapper">
-                                    <h3 className="title">
-                                        Bulan,{" "}
-                                        <span className="bold__title">
-                                            February
-                                        </span>
-                                    </h3>
-                                </div>
-
-                                <div className="moneyinfo__wrapper">
-                                    <div className="moneyinfo__item">
-                                        <i className="uil uil-money-stack moneyinfo__icon icon__blue"></i>
-                                        <h3 className="moneyinfo__total price font__blue">
-                                            Rp. 900.000
-                                        </h3>
-                                        <span className="moneyinfo__desc">
-                                            Saldo
-                                        </span>
-                                    </div>
-                                    <span className="moneyinfo__line"></span>
-
-                                    <div className="moneyinfo__item">
-                                        <i className="uil uil-money-withdraw moneyinfo__icon icon__green"></i>
-                                        <h3 className="moneyinfo__total price font__green">
-                                            Rp. 1.149.900
-                                        </h3>
-                                        <span className="moneyinfo__desc">
-                                            Pemasukan
-                                        </span>
-                                    </div>
-                                    <span className="moneyinfo__line"></span>
-
-                                    <div className="moneyinfo__item">
-                                        <i className="uil uil-money-insert moneyinfo__icon icon__red"></i>
-                                        <h3 className="moneyinfo__total price font__red">
-                                            Rp. 1.149.900
-                                        </h3>
-                                        <span className="moneyinfo__desc">
-                                            Pengeluaran
-                                        </span>
-                                    </div>
-                                </div>
-                            </div> */}
 
                             {/* <!--========== Transaction Information ==========--> */}
-                            <div className="transaction__container">
-                                <div className="transaction__title-wrapper">
-                                    <h3 className="title">
-                                        Transaksi,{" "}
-                                        <span className="bold__title">
-                                            Saat ini
-                                        </span>
-                                    </h3>
-                                </div>
-
-                                <div className="transaction__wrapper">
-                                    <div className="transaction__perday">
-                                        <div className="transaction__perday-header">
-                                            <span className="transaction__perday-date">
-                                                13 Dec 2020
-                                            </span>
-                                            <span className="transaction__perday-price price">
-                                                Rp.24.000
-                                            </span>
-                                        </div>
-                                        <div className="transaction__item">
-                                            <div className="transaction__item-title">
-                                                <i className="uil uil-money-insert transaction__icon icon__red"></i>
-                                                <div>
-                                                    <p className="transaction__categories">
-                                                        Makanan
-                                                    </p>
-                                                    <span className="transaction__desc">
-                                                        Gorengan
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <span className="transaction__item-price price">
-                                                Rp.12.000
-                                            </span>
-                                        </div>
-                                        <div className="transaction__item">
-                                            <div className="transaction__item-title">
-                                                <i className="uil uil-money-insert transaction__icon icon__red"></i>
-                                                <div>
-                                                    <p className="transaction__categories">
-                                                        Minuman
-                                                    </p>
-                                                    <span className="transaction__desc">
-                                                        Boba
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <span className="transaction__item-price price">
-                                                Rp.12.000
-                                            </span>
-                                        </div>
-                                        <div className="transaction__item">
-                                            <div className="transaction__item-title">
-                                                <i className="uil uil-money-withdraw transaction__icon icon__green"></i>
-                                                <div>
-                                                    <p className="transaction__categories">
-                                                        Gaji
-                                                    </p>
-                                                    <span className="transaction__desc">
-                                                        OVO
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <span className="transaction__item-price price">
-                                                Rp.12.000
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="transaction__wrapper">
-                                    <div className="transaction__perday">
-                                        <div className="transaction__perday-header">
-                                            <span className="transaction__perday-date">
-                                                13 Dec 2020
-                                            </span>
-                                            <span className="transaction__perday-price price">
-                                                Rp.24.000
-                                            </span>
-                                        </div>
-                                        <div className="transaction__item">
-                                            <div className="transaction__item-title">
-                                                <i className="uil uil-money-insert transaction__icon icon__red"></i>
-                                                <div>
-                                                    <p className="transaction__categories">
-                                                        Makanan
-                                                    </p>
-                                                    <span className="transaction__desc">
-                                                        Gorengan
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <span className="transaction__item-price price">
-                                                Rp.12.000
-                                            </span>
-                                        </div>
-                                        <div className="transaction__item">
-                                            <div className="transaction__item-title">
-                                                <i className="uil uil-money-insert transaction__icon icon__red"></i>
-                                                <div>
-                                                    <p className="transaction__categories">
-                                                        Minuman
-                                                    </p>
-                                                    <span className="transaction__desc">
-                                                        Boba
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <span className="transaction__item-price price">
-                                                Rp.12.000
-                                            </span>
-                                        </div>
-                                        <div className="transaction__item">
-                                            <div className="transaction__item-title">
-                                                <i className="uil uil-money-withdraw transaction__icon icon__green"></i>
-                                                <div>
-                                                    <p className="transaction__categories">
-                                                        Gaji
-                                                    </p>
-                                                    <span className="transaction__desc">
-                                                        OVO
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <span className="transaction__item-price price">
-                                                Rp.12.000
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <Transaction
+                                title="Transaksi"
+                                desc="7 hari terakhir"
+                            >
+                                <TransactionPerDay
+                                    date="13 Dec 2020"
+                                    totalPrice="Rp.24.000"
+                                >
+                                    <TransactionItem
+                                        title="Gaji"
+                                        desc="Tunai"
+                                        price="15.000"
+                                        isIncome
+                                    />
+                                    <TransactionItem
+                                        title="Makanan"
+                                        desc="Bitter Sweet"
+                                        price="15.000"
+                                    />
+                                </TransactionPerDay>
+                                <TransactionPerDay
+                                    date="13 Dec 2020"
+                                    totalPrice="Rp.24.000"
+                                >
+                                    <TransactionItem
+                                        title="Gaji"
+                                        desc="Tunai"
+                                        price="15.000"
+                                        isIncome
+                                    />
+                                    <TransactionItem
+                                        title="Makanan"
+                                        desc="Bitter Sweet"
+                                        price="15.000"
+                                    />
+                                </TransactionPerDay>
+                            </Transaction>
                         </div>
                         <div className="col-lg-5 px-4">
                             {/* <!--========== Todo Information ==========--> */}

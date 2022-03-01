@@ -8,7 +8,7 @@ export default function AddIncome() {
             <Sidebar pageTitle="income" />
             <main className="main">
                 {/*<!--========== Header ==========-->*/}
-                <Navbar title="Pendapatan" />
+                <Navbar title="Pemasukan" />
 
                 {/*<!--========== Dashboard ==========-->*/}
                 <section className="dashboard" id="dashboard">
